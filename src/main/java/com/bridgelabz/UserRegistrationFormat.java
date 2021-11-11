@@ -72,4 +72,15 @@ public class UserRegistrationFormat {
         matcher = pattern.matcher(name);
         return matcher.matches();
     }
+    /* method loginValidation to validate password format 2
+       Password should have 1 special character
+       @param Password return boolean value
+    */
+    public boolean loginRule4Validation(String Password){
+        String regexPassword4 = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%!]).{8,}$";
+        pattern = Pattern.compile(regexPassword4);
+        matcher = pattern.matcher(Password);
+        return matcher.matches();
+    }
+
 }
