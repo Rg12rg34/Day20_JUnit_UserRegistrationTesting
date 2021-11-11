@@ -1,8 +1,10 @@
 package com.bridgelabz;
-
-
+/* purpose write a junit program to validation of user registration program
+ * Validatin use the regex program
+ */
+import java.util.Scanner;
 import java.util.regex.Matcher;
-        import java.util.regex.Pattern;
+import java.util.regex.Pattern;
 
 public class UserRegistrationFormat {
     Pattern pattern;
@@ -17,7 +19,7 @@ public class UserRegistrationFormat {
         return matcher.matches();
     }
     /* methodlastName to validation of the name value
-       @param name return boolean value
+     * @param name return boolean value
      */
     public boolean lastName(String name){
         String regex = "^[A-Z]{1}[a-z]{2,}";
@@ -25,62 +27,52 @@ public class UserRegistrationFormat {
         matcher = pattern.matcher(name);
         return matcher.matches();
     }
-    /* method emailValidation to validate email format0
-       @param name return boolean value
+    /* method to validation of the name value
+     * @param name return boolean value
      */
-    public boolean emailValidation(String Email){
-        String regx = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z][2,3]){0,1}$";
-        pattern = Pattern.compile(regx);
-        matcher = pattern.matcher(Email);
+    public boolean emailValidation(String name){
+        String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z][2,3]){0,1}$";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(name);
         return matcher.matches();
     }
-    /* method  numberValidationto validate phone no format
-     * @param PhoneNo return boolean value
+    /* method to validation of mobile number data
+     * @param name return boolean value
      */
-    public boolean numberValidation(String PhoneNo){
-        String regx = "^[0-9]{2}\\s[0-9]{10}";
-        pattern = Pattern.compile(regx);
-        matcher = pattern.matcher(PhoneNo);
+    public boolean numberValidation(String number){
+        String regex = "^[0-9]{2}\\s[0-9]{10}";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(number);
         return matcher.matches();
     }
-    /* method loginValidation to validate password format 1
-   @param Password return boolean value
- */
-    public boolean loginValidation(String Password) {
-        String regexPassword = "[A-Za-z0-9]{8,}";
-        pattern = Pattern.compile(regexPassword);
-        matcher = pattern.matcher(Password);
-        return matcher.matches();
-    }
-    /* method loginValidation to validate password format 2
-      Password should have at least 1 or more digits
-      @param Password return boolean value
-    */
-    public boolean loginValidation2(String Password) {
-        String regexPassword = "[A-Za-z0-9]{8,}";
-        pattern = Pattern.compile(regexPassword);
-        matcher = pattern.matcher(Password);
-        return matcher.matches();
-    }
-    /* method loginValidation to validate password format 2
-       Password should have at least 1 or more digits
-       @param Password return boolean value
+    /* methodlogin to validation of login value should have minimum eight value data
+     * @param name return boolean value
      */
+    public boolean loginRule1Validation(String name){
+        String regex = "^[A-Za-z0-9]{8,}";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(name);
+        return matcher.matches();
+    }
+    //create method to validation of login have atleast one upper value data
+    public boolean loginRule2Validation(String name){
+        String regex = "^(?=.*[A-Z]){1}(?=.*[a-z]).{8,}$";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(name);
+        return matcher.matches();
+    }
+    //create method to validation one or greater digit value data
     public boolean loginRule3Validation(String name){
         String regex = "(?=.*[A-Z]){1}(?=.*[0-9])(?=.*[a-z]).{8,}$";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(name);
         return matcher.matches();
     }
-    /* method loginValidation to validate password format 2
-       Password should have 1 special character
-       @param Password return boolean value
-    */
-    public boolean loginRule4Validation(String Password){
-        String regexPassword4 = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%!]).{8,}$";
-        pattern = Pattern.compile(regexPassword4);
-        matcher = pattern.matcher(Password);
+    //create methofd to validation one special value data
+    public boolean loginRule4Validation(String name){
+        String regex = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%!]).{8,}$";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(name);
         return matcher.matches();
     }
-
 }
