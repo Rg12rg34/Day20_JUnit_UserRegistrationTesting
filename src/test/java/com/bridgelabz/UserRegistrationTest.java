@@ -54,4 +54,14 @@ public class UserRegistrationTest {
     public void givenRule2Values_WhenNotProper_ShouldReturnFalse(){
         boolean result = userRegistration.loginValidation2("addqeghopnm");
     }
+    @Test
+    public void givenRule3Value_WhenProper_ShouldReturnTrue(){
+        boolean result = userRegistration.loginRule3Validation("Laoqo1rpnm");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenRule3Values_WhenNotProper_ShouldReturnFalse(){
+        boolean result = userRegistration.loginRule3Validation("aqLawhrpnm");
+        Assert.assertFalse(result);
+    }
 }
