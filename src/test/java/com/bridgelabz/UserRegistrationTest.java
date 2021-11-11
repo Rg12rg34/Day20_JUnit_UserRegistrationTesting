@@ -37,12 +37,21 @@ public class UserRegistrationTest {
     }
     @Test
     public void giveLoginValue_WhenProper_ShouldReturnTrue(){
-        boolean result = userRegistration.loginValidation("Aqqqqqqqm");
+        boolean result = userRegistration.loginValidation("Asbmsopnm");
         Assert.assertTrue(result);
     }
     @Test
     public void givenLoginValues_WhenNotProper_ShouldReturnFalse() {
-        boolean result = userRegistration.loginValidation("Artyuim");
+        boolean result = userRegistration.loginValidation("Asjspnm");
         Assert.assertFalse(result);
+    }
+    @Test
+    public void givenRule2Value_WhenProper_ShouldReturnTrue(){
+        boolean result = userRegistration.loginValidation2("Logaqaaopnm");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenRule2Values_WhenNotProper_ShouldReturnFalse(){
+        boolean result = userRegistration.loginValidation2("addqeghopnm");
     }
 }

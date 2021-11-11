@@ -52,4 +52,10 @@ public class UserRegistrationFormat {
         matcher = pattern.matcher(Password);
         return matcher.matches();
     }
+    public boolean loginValidation2(String Password) {
+        String regexPassword = "[A-Za-z0-9]{8,}";
+        pattern = Pattern.compile(regexPassword);
+        matcher = pattern.matcher(Password);
+        return matcher.matches();
+    }
 }
