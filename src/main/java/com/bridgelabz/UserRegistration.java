@@ -1,5 +1,4 @@
 package com.bridgelabz;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,9 +6,9 @@ import java.util.regex.Pattern;
  * Purpose  - As a User need to enter a valid email
  * @author  - Yogendra Lalit Sharma
  * @version - 16.0
- * @since   - 2021-10-02
+ * @since   - 2021-11-10
  */
-public class UserRegistrationFormat {
+public class UserRegistration {
     /*
     Created a method to validate first name
      */

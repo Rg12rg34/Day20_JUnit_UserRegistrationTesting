@@ -1,39 +1,42 @@
 package com.bridgelabz;
-
 import org.junit.Assert;
 import org.junit.Test;
 
+
 public class UserRegistrationTest {
-    UserRegistrationFormat userRegistration = new UserRegistrationFormat();
+    UserRegistration userRegistration = new UserRegistration();
+
     /**
      * Unit test for validating first name
      */
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistration.firstName("Rahul");
+        boolean result = userRegistration.firstName("Utkarsh");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenFirstName_WhenNotProper_ShouldReturnFlase() {
-        boolean result = userRegistration.firstName("rahul");
+        boolean result = userRegistration.firstName("utkarsh");
         Assert.assertEquals(false, result);
     }
+
     /**
      * Unit test for validating last name
      */
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistration.lastName("Gupta");
+        boolean result = userRegistration.lastName("Mishra");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenLastName_WhenNotProper_ShouldReturnFalse() {
-        boolean result = userRegistration.lastName("gupta");
+        boolean result = userRegistration.lastName("mishra");
         Assert.assertEquals(false, result);
 
     }
+
     /**
      * Unit test for validating email address
      */
@@ -54,13 +57,13 @@ public class UserRegistrationTest {
      */
     @Test
     public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistration.phoneNumber("91 7844999753");
+        boolean result = userRegistration.phoneNumber("91 7844999888");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenPhoneNumber_WhenNotProper_ShouldReturnFlase() {
-        boolean result = userRegistration.phoneNumber("+91 7844999753");
+        boolean result = userRegistration.phoneNumber("+91 7844999888");
         Assert.assertEquals(false, result);
     }
 
@@ -72,6 +75,7 @@ public class UserRegistrationTest {
         boolean result = userRegistration.password("password");
         Assert.assertEquals(true, result);
     }
+
     @Test
     public void givenPassword_WhenNotProper_ShouldReturnFalse() {
         boolean result = userRegistration.password("psw@");
@@ -86,6 +90,7 @@ public class UserRegistrationTest {
         boolean result = userRegistration.passwordRule2("passWord");
         Assert.assertEquals(true, result);
     }
+
     @Test
     public void givenPasswordRule2_WhenNotProper_ShouldReturnFalse() {
         boolean result = userRegistration.passwordRule2("psw@");
@@ -100,6 +105,7 @@ public class UserRegistrationTest {
         boolean result = userRegistration.passwordRule3("123Aab123");
         Assert.assertEquals(true, result);
     }
+
     @Test
     public void givenPasswordRule3_WhenNotProper_ShouldReturnFalse() {
         boolean result = userRegistration.passwordRule3("123456789");
@@ -114,6 +120,7 @@ public class UserRegistrationTest {
         boolean result = userRegistration.passwordRule4("1234@Abc");
         Assert.assertEquals(true, result);
     }
+
     @Test
     public void givenPasswordRule4_WhenNotProper_ShouldReturnFalse() {
         boolean result = userRegistration.passwordRule4("akdj@ds@A");
@@ -128,9 +135,25 @@ public class UserRegistrationTest {
         boolean result = userRegistration.emailIdValidator("abc.100@abc.com.au");
         Assert.assertEquals(true, result);
     }
+
     @Test
     public void givenEmail1_WhenNotProper_ShouldReturnFalse() {
         boolean result = userRegistration.emailIdValidator("abc()*@gmail.com");
         Assert.assertEquals(false, result);
+    }
+
+    /**
+     * Unit test for validating mood of the User
+     */
+    @Test
+    public void givenMessage_WhenHappy_ShouldReturnEntrySuccessful() {
+        String result = MoodAnalyser.analyseMood("User is Happy");
+        Assert.assertEquals("Entry Successful", result);
+    }
+
+    @Test
+    public void givenEmail2_WhenNotProper_ShouldReturnEntryFailed() {
+        String result = MoodAnalyser.analyseMood("User is Sad");
+        Assert.assertEquals("Entry Failed", result);
     }
 }
