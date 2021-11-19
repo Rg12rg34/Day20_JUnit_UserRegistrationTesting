@@ -1,14 +1,16 @@
 package com.bridgelabz;
 
+
 /**
  * Purpose  - Mood Analyser for user
  *
- * @author - Yogendra Lalit Sharma
+ * @author - Rahul Gupta
  * @version - 16.0
  * @since - 2021-11-10
  */
 
 public class MoodAnalyser {
+
 
     public static String analyseMood(String mood) throws MoodAnalyserException {
         try {

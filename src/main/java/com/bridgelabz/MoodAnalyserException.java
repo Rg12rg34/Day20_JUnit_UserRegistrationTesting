@@ -1,7 +1,6 @@
 package com.bridgelabz;
 
 public class MoodAnalyserException extends Exception {
-
     public String message;
     public static ExceptionType type;
 
